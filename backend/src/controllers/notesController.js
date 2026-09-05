@@ -14,7 +14,7 @@ export async function fetchNoteById(req, res) {
 
 export async function getAllNotes(req, res) {
   try {
-    const notes = await Note.find(req.parmas.id);
+    const notes = await Note.find();
     res.status(200).json(notes);
   } catch (error) {
     console.error("Error in getAllNotes controller", error);
