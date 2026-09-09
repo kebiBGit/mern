@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 import { useThemeReactive } from "../lib/theme.js";
 import toast from "react-hot-toast";
-import axios from "axios";
+import api from "../lib/axios.js";
 
 const CreatePage = () => {
   const [title, setTitle] = useState("");
@@ -22,7 +22,7 @@ const CreatePage = () => {
 
     setLoading(true);
     try {
-      await axios.post("http://localhost:5001/api/notes", {
+      await api.post("/notes", {
         title,
         content,
       });
